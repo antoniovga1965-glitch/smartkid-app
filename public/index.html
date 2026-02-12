@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Smartkid personal app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-teal-300">
+    <div class="px-2 h-auto ">
+
+        <h1 class="font-bold font-serif text-center text-lg py-2">Weather App</h1>
+
+           <nav class="flex justify-between items-center border-2 border-black rounded-xl px-2 ">
+
+            <h1 class="font-bold font-monospace text-xl">Smartkid App</h1>
+           
+                <div id="hamburgermenu" class="hidden">
+                    <span></span>
+                     <span></span>
+                      <span></span>
+                   </div>
+            
+        </nav>
+
+        <aside id="sidebar" class="h-screen p-2 flex flex-col gap-2">
+            <button class="bg-pink-200 w-full px-2 rounded-xl text-black font-bold font-serif" id="homebtn">Home</button>
+            <button class="bg-pink-200 w-full px-2 rounded-xl text-black font-bold font-serif" id="portal">Get units</button>
+            <button class="bg-pink-200 w-full px-2 rounded-xl text-black font-bold font-serif" id="helbhef">Helb/hef portal</button>
+            
+        </aside>
+        
+        <form id="loginform" class="border-2 border-black p-2 mt-4 rounded-xl bg-gradient-to-b from-teal-600 to-green-900 mt-[10%] ">
+            <h1 class="font-bold text-center text-lg font-serif">Login Form</h1>
+            <label class="font-bold font-serif block" for="username">Username</label>
+            <input class="border-2 border-black w-full rounded-xl px-2 py-1 font-bold" type="text" id="usernameinput" placeholder="Enter your username">
+            <p  class="text-red-700 font-bold font-serif hidden" id="usernameerror">Please fill in this field</p>
+
+             <label  class="font-bold font-serif block" for="password">Password</label>
+            <input class="border-2 border-black w-full rounded-xl px-2 py-1 font-bold" type="password" id="passwordinput" placeholder="Enter your password">
+              <p class="text-red-700 font-bold font-serif hidden" id="passworderror">Please fill in this field</p>
+
+            <button class="mx-auto flex bg-purple-900 px-2 rounded-full text-white font-bold mt-3" id="loginbtn">login</button>
+
+            <p class="font-bold bg-teal-200 rounded-xl px-2 hidden mt-4" id="loginresults"></p>
+
+            <p class="text-center font-bold font-serif my-2">Dont have an account?<a id="reglink" class="text-red-500" href="#">Click here</a> to register</p>
+        </form>
+
+        <form id="registrationform" class="border-2 border-black p-2 mt-4 rounded-xl bg-gradient-to-r from-teal-400 to-green-100 hidden" >
+            <h1 class="font-bold text-center text-lg font-serif" >Registeration form</h1>
+
+            <label  class="font-bold font-serif block" for="username">Username</label>
+            <input class="border-2 border-black w-full rounded-xl px-2 py-1 font-bold"  type="text" id="Rusernameinput" placeholder="Enter your prefered  username">
+
+            <label   class="font-bold font-serif block" for="age">Age</label>
+           <input class="border-2 border-black w-full rounded-xl px-2 py-1 font-bold"  type="number" id="Rageinput" placeholder="Enter your age">
+
+           <label   class="font-bold font-serif block" for="password">Password</label>
+           <input class="border-2 border-black w-full rounded-xl px-2 py-1 font-bold"  type="password" id="Rpasswordinput" placeholder="Enter your set password">
+
+           <button class="bg-gradient-to-r from-teal-400 to-green-900 mx-auto px-2 flex mt-2 rounded-full font-bold"  id="submitbtn">submit</button>
+
+           <p class="font-bold bg-teal-200 rounded-xl px-2 hidden mt-2" id="registrationresults"></p>
+            
+        </form>
+
+
+        <section id="dashboard" class="hidden">
+            <div  class="border-2 border-black rounded-xl px-2 py-1 bg-indigo-300 mt-2">
+                <h1 class="font-bold text-center text-lg font-serif" >Tasks for the day</h1>
+                <label class="font-bold font-serif block" for="task">Enter your task honourable</label>
+                <input class="border-2 border-black w-full rounded-xl px-2 py-1 font-bold"  type="text" placeholder="Enter your task" id="taskinput">
+
+                <div class="flex justify-evenly items-center mt-3 ">
+                    <button class="bg-green-400 px-2 rounded-full font-bold font-serif " id="addtask">add task</button>
+                    <button class="bg-red-400 px-2 rounded-full font-bold font-serif " id="deletetask">Delete task</button>
+                </div>
+                <ul class="font-bold bg-teal-200 rounded-xl px-2 hidden mt-3" id="tasksresults"></ul>
+            </div>
+
+            <div class="border-2 border-black rounded-xl px-2 py-1 bg-purple-300 mt-2 ">
+            <h1 class="font-bold text-center text-lg font-serif" >Check weather for specific region</h1>
+            <label class="font-bold font-serif block" for="weather">Search weather</label>
+            <input class="border-2 border-black w-full rounded-xl px-2 py-1 font-bold" type="search" id="searchweatherinput" placeholder="Search a certain region">
+            <button class="bg-red-400 px-2 rounded-full font-bold font-serif m-2 "  id="getweatherbtn">Get weather</button>
+            <div class="">
+            <div class="mx-auto flex hidden" id="spinner"></div>
+             <ul class="font-bold bg-teal-200 rounded-xl px-2 hidden mt-3" id="weatherresults"></ul>
+
+            </div>
+           
+            </div>
+            <div class="border-2 border-black rounded-xl px-2 py-2 my-4 ">
+                <h1 class="font-bold text-center text-lg font-serif">Coding languages yet to venture in</h1>
+                <ul class="font-bold bg-teal-200 rounded-xl px-2" id="codingresult"></ul>
+                <button class="bg-red-400 px-2 rounded-full font-bold font-serif " id="getcodingbtn">check</button>
+            </div>
+            <div class="border-2 border-black rounded-xl px-2 py-2 mt-2 my-2 ">
+                <h1  class="font-bold text-center text-lg font-serif">Search movie</h1>
+                <input class="border-2 border-black w-full rounded-xl px-2 py-1 font-bold" type="search" placeholder="search a movie" id="moviesearch" >
+                <button class="bg-red-400 px-2 rounded-full font-bold font-serif mt-3 mb-3 " id="searchbtn">search</button>
+
+                <div id="movieresults">
+                 <div class="mx-auto flex hidden" id="spinners"></div>
+                </div>
+            </div>
+        </section>
+      <p class="fixed bottom-0 left-0 w-full font-bold font-monospace text-black text-center py-1 z-80 mt-4">
+         Copyright of smartkid's Production
+</p>
+
+    </div>
+   
+
+    <script src="script.js"></script>
+</body>
+</html>
